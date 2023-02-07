@@ -1,19 +1,34 @@
+class Panier{
+
+    constructor(sousTotalPeches,sousTotalPoires,sousTotalPommes,total){
+        this.sousTotalPeches = sousTotalPeches;
+        this.sousTotalPoires = sousTotalPoires;
+        this.sousTotalPommes = sousTotalPommes;
+        this.total = total;
+    }
+}
+
+
 function Ajuster(fruit) {
     let sousTotalPeches = document.getElementById("sousTotalPeches");
     let sousTotalPoires = document.getElementById("sousTotalPoires");
     let sousTotalPommes = document.getElementById("sousTotalPommes");
+    let total = document.getElementById("total");
+
+    const panier = new Panier(sousTotalPeches,sousTotalPoires,sousTotalPommes,total)
+
     switch (fruit) {
         case "Peches":
-            sousTotalPeches.innerHTML = parseInt(document.getElementById("prixPeches").innerText) * document.getElementById("nbPeches").value;
+            panier.sousTotalPeches.innerHTML = parseInt(document.getElementById("prixPeches").innerText) * document.getElementById("nbPeches").value;
             break;
         case "Poires":
-            sousTotalPoires.innerHTML = parseInt(document.getElementById("prixPoires").innerText) * document.getElementById("nbPoires").value;
+            panier.sousTotalPoires.innerHTML = parseInt(document.getElementById("prixPoires").innerText) * document.getElementById("nbPoires").value;
             break;
         case "Pommes":
-            sousTotalPommes.innerHTML = parseInt(document.getElementById("prixPommes").innerText) * document.getElementById("nbPommes").value;
+            panier.sousTotalPommes.innerHTML = parseInt(document.getElementById("prixPommes").innerText) * document.getElementById("nbPommes").value;
             break;
     }
-    document.getElementById("total").innerText = +sousTotalPeches.innerHTML + +sousTotalPommes.innerHTML + +sousTotalPoires.innerHTML;
+    panier.total.innerText = +sousTotalPeches.innerHTML + +sousTotalPommes.innerHTML + +sousTotalPoires.innerHTML;
 
 
 }
