@@ -53,3 +53,6 @@ tfoot * {
 #total {
 	vertical-align: middle;
 }
+.invisible{
+	display:none;
+}
