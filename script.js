@@ -57,4 +57,4 @@ function Reset(){
     document.getElementById("total").innerText=0;
 }
 
-addEventListener(`reset`, ()=> {Reset()})
+addEventListener('reset', ()=> {Reset()})
