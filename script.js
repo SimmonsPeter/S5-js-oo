@@ -6,6 +6,9 @@ class Panier{
         this.sousTotalPommes = sousTotalPommes;
         this.total = total;
     }
+    toString(){
+        return `Peches: ${this.sousTotalPeches}\nPoires: ${this.sousTotalPoires}\nPommes: ${this.sousTotalPommes}\nTotal: ${this.total}$`;
+    }
 }
 
 
@@ -58,3 +61,12 @@ function Reset(){
 }
 
 addEventListener('reset', ()=> {Reset()})
+
+function afficher(){
+
+    let panier = sessionStorage.getItem("panier");
+    document.writeln(panier);
+
+
+}
+
